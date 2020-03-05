@@ -7,10 +7,10 @@ import dagger.Provides
 import javax.inject.Singleton
 
 @Module
-class AppModule (){
+class AppModule (private val app: FetchRewardsApplication){
 
     @Provides
     @Singleton
-    fun provideApplicationContext(): Context = FetchRewardsApplication()
+    fun provideApplicationContext(): Context = app
 
 }

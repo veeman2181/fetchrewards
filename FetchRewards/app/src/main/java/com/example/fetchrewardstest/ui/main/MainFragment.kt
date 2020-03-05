@@ -26,7 +26,6 @@ class MainFragment : Fragment() {
 
     private var mAdapter: ListItemAdapter? = null
     private var mainFragmentBinding: MainFragmentBinding? = null
-    private var mainFragmentView: View? = null
 
     private lateinit var viewModel: MainViewModel
 
@@ -58,11 +57,7 @@ class MainFragment : Fragment() {
         viewModel.getFilteredList().observe(viewLifecycleOwner,
             Observer<List<Item>> { t ->
                 t?.apply {
-                    mAdapter?.setList(
-                        t.filter { item -> !item.name.isNullOrEmpty() }.sortedWith(
-                            compareBy({ it.listId }, { it.name?.split(" ")?.get(1)?.toInt() })
-                        )
-                    )
+                    mAdapter?.setList(t)
                 }
             })
     }
@@ -72,7 +67,7 @@ class MainFragment : Fragment() {
     }
 
     private fun setupAdapter() {
-        mAdapter = ListItemAdapter(this@MainFragment.requireActivity())
+        mAdapter = ListItemAdapter(mContext)
         mainFragmentBinding?.listView?.apply {
             layoutManager = LinearLayoutManager(activity)
             addItemDecoration(DividerItemDecoration(activity, DividerItemDecoration.VERTICAL))

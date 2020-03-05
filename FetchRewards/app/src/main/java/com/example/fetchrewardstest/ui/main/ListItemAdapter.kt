@@ -12,11 +12,7 @@ import com.example.fetchrewardstest.model.Item
 
 class ListItemAdapter(var context: Context) : RecyclerView.Adapter<ListItemAdapter.ViewHolder>() {
     private var mItemList: List<Item> = emptyList()
-    private var listIdCount = -1
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-//        val layoutId = viewType == LIST_AND_NAME_LAYOUT?
-//        val binding: ItemNameBinding =
-//            DataBindingUtil.inflate(LayoutInflater.from(context), R.layout.item_name, parent, false)
         return ViewHolder.create(LayoutInflater.from(context), parent, viewType)
     }
 

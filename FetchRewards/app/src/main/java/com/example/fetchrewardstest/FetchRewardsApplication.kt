@@ -13,6 +13,8 @@ class FetchRewardsApplication : Application() {
 
     override fun onCreate() {
         super.onCreate()
-        appComponent = DaggerAppComponent.builder().retrofitModule(RetrofitModule()).build();
+        appComponent = DaggerAppComponent.builder().retrofitModule(RetrofitModule()).appModule(
+            AppModule(this)
+        ).build();
     }
 }
