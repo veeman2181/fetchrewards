@@ -1,4 +1,4 @@
-package com.example.fetchrewardstest.ui.main
+package com.example.fetchrewardstest.adapters
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -13,7 +13,11 @@ import com.example.fetchrewardstest.model.Item
 class ListItemAdapter(var context: Context) : RecyclerView.Adapter<ListItemAdapter.ViewHolder>() {
     private var mItemList: List<Item> = emptyList()
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        return ViewHolder.create(LayoutInflater.from(context), parent, viewType)
+        return ViewHolder.create(
+            LayoutInflater.from(context),
+            parent,
+            viewType
+        )
     }
 
     override fun getItemCount(): Int = mItemList.size
@@ -41,7 +45,9 @@ class ListItemAdapter(var context: Context) : RecyclerView.Adapter<ListItemAdapt
             fun create(inflater: LayoutInflater, parent: ViewGroup, viewType: Int): ViewHolder {
                 val binding =
                     DataBindingUtil.inflate<ViewDataBinding>(inflater, viewType, parent, false)
-                return ViewHolder(binding)
+                return ViewHolder(
+                    binding
+                )
             }
         }
 

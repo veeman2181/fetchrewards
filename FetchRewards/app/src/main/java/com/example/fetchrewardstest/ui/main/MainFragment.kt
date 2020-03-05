@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.fetchrewardstest.FetchRewardsApplication
 import com.example.fetchrewardstest.R
+import com.example.fetchrewardstest.adapters.ListItemAdapter
 import com.example.fetchrewardstest.databinding.MainFragmentBinding
 import com.example.fetchrewardstest.model.Item
 import com.example.fetchrewardstest.retrofit.RetrofitRepository
@@ -68,7 +69,8 @@ class MainFragment : Fragment() {
     }
 
     private fun setupAdapter() {
-        mAdapter = ListItemAdapter(mContext)
+        mAdapter =
+            ListItemAdapter(mContext)
         mainFragmentBinding?.listView?.apply {
             layoutManager = LinearLayoutManager(activity)
             addItemDecoration(DividerItemDecoration(activity, DividerItemDecoration.VERTICAL))
