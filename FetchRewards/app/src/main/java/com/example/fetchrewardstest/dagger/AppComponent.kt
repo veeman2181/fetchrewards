@@ -2,7 +2,7 @@ package com.example.fetchrewardstest.dagger
 
 import com.example.fetchrewardstest.retrofit.RetrofitRepository
 import com.example.fetchrewardstest.ui.main.MainFragment
-import com.example.fetchrewardstest.ui.main.MainViewModel
+import com.example.fetchrewardstest.viewmodel.MainViewModel
 import dagger.Component
 import javax.inject.Singleton
 

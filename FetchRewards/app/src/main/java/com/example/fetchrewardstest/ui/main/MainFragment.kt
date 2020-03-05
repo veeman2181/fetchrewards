@@ -16,6 +16,7 @@ import com.example.fetchrewardstest.R
 import com.example.fetchrewardstest.databinding.MainFragmentBinding
 import com.example.fetchrewardstest.model.Item
 import com.example.fetchrewardstest.retrofit.RetrofitRepository
+import com.example.fetchrewardstest.viewmodel.MainViewModel
 import javax.inject.Inject
 
 class MainFragment : Fragment() {

@@ -1,4 +1,4 @@
-package com.example.fetchrewardstest.ui.main
+package com.example.fetchrewardstest.viewmodel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
